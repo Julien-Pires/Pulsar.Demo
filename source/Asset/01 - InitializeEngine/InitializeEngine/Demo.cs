@@ -54,6 +54,22 @@ namespace InitializeEngine
         }
 
         /// <summary>
+        /// Releases resources
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            /* 
+             * AssetEngine can be disposed either by calling Dispose of the engine or of the service : 
+             * 
+             * _assetEngineService.AssetEngine.Dispose();
+             */
+            _assetEngineService.Dispose();
+        }
+
+        /// <summary>
         /// Loads game content
         /// </summary>
         protected override void LoadContent()
