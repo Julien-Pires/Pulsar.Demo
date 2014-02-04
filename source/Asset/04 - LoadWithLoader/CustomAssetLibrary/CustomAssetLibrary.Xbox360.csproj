@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{86705DBB-154A-43DF-A427-2B764F9537BB}</ProjectGuid>
+    <ProjectGuid>{21ABD8C0-DA4A-4515-8154-7A7EA7AA2ED0}</ProjectGuid>
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">Xbox 360</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common</RootNamespace>
-    <AssemblyName>Common</AssemblyName>
+    <RootNamespace>CustomAssetLibrary</RootNamespace>
+    <AssemblyName>CustomAssetLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Xbox 360</XnaPlatform>
     <XnaProfile>HiDef</XnaProfile>
-    <XnaCrossPlatformGroupID>0495526c-b241-49c8-a938-9cd7bf748ce3</XnaCrossPlatformGroupID>
+    <XnaCrossPlatformGroupID>2ecfc8ad-45bd-4d4e-9ac9-f326447fca02</XnaCrossPlatformGroupID>
     <XnaOutputType>Library</XnaOutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Xbox 360' ">
@@ -42,9 +42,20 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="Asset\AssetMessages.cs" />
-    <Compile Include="Output.cs" />
+    <Compile Include="Asset\CustomAsset.cs" />
+    <Compile Include="Asset\CustomAssetLoader.cs" />
+    <Compile Include="Asset\CustomAssetParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <Reference Include="Pulsar">
+      <HintPath>..\..\..\..\lib\Pulsar\Xbox 360\Debug\Pulsar.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <Reference Include="Pulsar">
+      <HintPath>..\..\..\..\lib\Pulsar\Xbox 360\Release\Pulsar.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework">

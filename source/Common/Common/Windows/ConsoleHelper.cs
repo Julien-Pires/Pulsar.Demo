@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Common.Windows
@@ -29,7 +30,7 @@ namespace Common.Windows
         /// Opens a console for the current process
         /// </summary>
         public static void OpenConsole()
-        {            
+        {         
             bool result = AllocConsole();
             if (!result)
             {

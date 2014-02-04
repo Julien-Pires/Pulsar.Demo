@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent xmlns:Data="CustomAssetLibrary.Asset">
+  <Asset Type="Data:CustomAsset">
+    <_name>MyFirstCustomAsset</_name>
+    <_value>An important value</_value>
+  </Asset>
+</XnaContent>
