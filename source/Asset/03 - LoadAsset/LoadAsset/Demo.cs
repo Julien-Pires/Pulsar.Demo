@@ -1,13 +1,9 @@
-using System;
-
-#if XBOX || XBOX360
-using System.Diagnostics;
-#endif
-
+using Common.Asset;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using Common;
 #if WINDOWS
 using Common.Windows;
 #endif
@@ -45,23 +41,6 @@ namespace LoadAsset
 
         #endregion
 
-        #region Static methods
-
-        /// <summary>
-        /// Shows a message to the output
-        /// </summary>
-        /// <param name="message">Message</param>
-        private static void Output(string message)
-        {
-#if WINDOWS
-            Console.WriteLine(message);
-#elif XBOX || XBOX360
-            Debug.WriteLine(message);
-#endif
-        }
-
-        #endregion
-
         #region Methods
 
         /// <summary>
@@ -77,10 +56,10 @@ namespace LoadAsset
 #endif
             _assetEngineService = new AssetEngineService(this);
             _gameStorage = _assetEngineService.AssetEngine.CreateStorage(StorageName);
-            Output(string.Format("Storage {0} created", StorageName));
+            Output.WriteLine(AssetMessages.StorageCreated, StorageName);
 
             _gameStorage.AddFolder(MeshFolder);
-            Output(string.Format("Folder {0} created", MeshFolder));
+            Output.WriteLine(AssetMessages.FolderCreated, MeshFolder);
 
             base.Initialize();
         }
@@ -116,7 +95,7 @@ namespace LoadAsset
 
             // The load method works exactly like the load method of ContentManager class :
             Model crate = meshFolder.Load<Model>(CrateMesh);
-            Output(string.Format("Mesh {0} loaded : {1} Mesh - {2} Bones", CrateMesh, 
+            Output.WriteLine(string.Format("Mesh {0} loaded : {1} Mesh - {2} Bones", CrateMesh, 
                 crate.Meshes.Count, crate.Bones.Count));
 
             /*
@@ -124,10 +103,10 @@ namespace LoadAsset
              * One of them allow you to use a custom name for the mesh instead of the path :
              */
             Model namedCrate = meshFolder.Load<Model>(CrateName, CrateMesh);
-            Output(string.Format("Mesh {0} loaded : {1} Mesh - {2} Bones", CrateName, 
+            Output.WriteLine(string.Format("Mesh {0} loaded : {1} Mesh - {2} Bones", CrateName, 
                 namedCrate.Meshes.Count, namedCrate.Bones.Count));
 
-            Output(string.Format("Total loaded asset : {0}", meshFolder.Count));
+            Output.WriteLine(string.Format("Total loaded asset : {0}", meshFolder.Count));
         }
 
         /// <summary>
