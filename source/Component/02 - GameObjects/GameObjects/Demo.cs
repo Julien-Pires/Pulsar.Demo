@@ -51,6 +51,15 @@ namespace GameObjects
             base.Initialize();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+#if WINDOWS
+            ConsoleHelper.CloseConsole();
+#endif
+
+            base.Dispose(disposing);
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
