@@ -15,7 +15,7 @@ namespace Systems
     {
         #region Fields
 
-        private BattlefieldScene _scene = new BattlefieldScene();
+        private readonly BattlefieldScene _scene = new BattlefieldScene();
 
         #endregion
 

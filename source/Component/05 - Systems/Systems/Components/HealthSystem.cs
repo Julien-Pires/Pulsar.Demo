@@ -68,8 +68,8 @@ namespace Systems.Components
 
         #region Fields
 
-        private const string DamageReceived = "The soldier {0} received {1} damage";
-        private const string ShieldAbsorbed = "The shield has absorbed {0} damage, {1} power remaining";
+        private const string DamageReceived = "The soldier {0} receives {1} damage";
+        private const string ShieldAbsorbed = "The shield absorbs {0} damage, {1} power remaining";
         private const string LifeLost = "{0} point of life lost, {1} point of life remaining";
         private const string ShieldRegenerated = "The shield of soldier {0} has regenerated {1} power";
 

@@ -15,7 +15,7 @@ namespace Systems.Components
     {
         #region Fields
 
-        private const string PoisonDamage = "The poison dealt {0} damage";
+        private const string PoisonDamage = "The poison deals {0} damage";
 
         private readonly Mediator _mediator;
         private readonly Random _rand = new Random();
