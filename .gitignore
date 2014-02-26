@@ -37,6 +37,12 @@ x64/
 *.vssscc
 .builds
 
+#Build Exceptions
+!lib/Pulsar/*/[Dd]ebug/
+!lib/Pulsar/*/[Rr]elease/
+!lib/Pulsar/*/[Dd]ebug/*.pdb
+!lib/Pulsar/*/[Rr]elease/*.pdb
+
 # Visual C++ cache files
 ipch/
 *.aps
